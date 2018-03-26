@@ -2,6 +2,7 @@
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 application.iml
+out
 
 ### STS ###
 .apt_generated

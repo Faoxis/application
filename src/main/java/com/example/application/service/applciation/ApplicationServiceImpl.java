@@ -30,11 +30,12 @@ public class ApplicationServiceImpl implements ApplicationService, ApplicationSu
 
     @Override
     public Application handle(Application application) {
-        Application handledApplication;
+        Application handledApplication = null;
         for (Observer observer : observers) {
             handledApplication = observer.update(application);
         }
 
-        return applicationRepository.save(application);
+        assert handledApplication != null;
+        return applicationRepository.save(handledApplication);
     }
 }
